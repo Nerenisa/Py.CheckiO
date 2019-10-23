@@ -28,19 +28,23 @@ M = ['skeleton', 'ghost', 'jack', 'vampire', 'witch', 'mummy', 'zombie', 'werewo
 
 
 def halloween_monsters(spell: str)-> int:
+
     for i in M:
-        k = []
         if len(spell) >= len(i):
-            
+            k = [] 
             a = []
             for d in i:
                 for s in spell:
                     if d == s:
                         a.append(s)
             h = ''.join(a)
-        if h = i:
-           k.append(h) 
-           print(k)
+            print(h)
+        
+        
+        
+            # if h == i:
+            #    k.append(h) 
+            #    print(k)
         # elif len(spell) < len(i):
         #    for d in i:
         #         for s in spell:
