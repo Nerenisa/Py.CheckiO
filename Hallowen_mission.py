@@ -31,8 +31,10 @@ def halloween_monsters(spell: str)-> int:
     s1 = []
     for letter_2 in MONSTERS:
         Res = ''.join([x for x in letter_2 if x in spell])
+        s2 = []
         if Res > letter_2:
-           s1.append(Res) 
+           s2.append(Res)
+            
         elif Res == letter_2:
            s1.append(Res) 
                  
