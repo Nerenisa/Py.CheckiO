@@ -5,7 +5,7 @@ import re
 from itertools import combinations
 import itertools
 
-M = ['skeleton', 'ghost', 'jack', 'vampire', 'witch', 'mummy', 'zombie', 'werewolf', 'frankenstein'] 
+MONSTERS = ['skeleton', 'ghost', 'jack', 'vampire', 'witch', 'mummy', 'zombie', 'werewolf', 'frankenstein'] 
 
 
 
@@ -28,33 +28,32 @@ M = ['skeleton', 'ghost', 'jack', 'vampire', 'witch', 'mummy', 'zombie', 'werewo
 
 
 def halloween_monsters(spell: str)-> int:
+    s1 = []
+    for letter_2 in MONSTERS:
+        Res = ''.join([x for x in letter_2 if x in spell])
+        if Res > letter_2:
+           s1.append(Res) 
+        elif Res == letter_2:
+           s1.append(Res) 
+                 
+    
+    d = ' '.join((s1))
+    if 'ghost' in d:
+        repl = d.replace('jack', 'ghost') 
+        return len(repl.split())
+    elif 'witch' in d:
+        dubl = ' '.join(('witch', d)) 
+        return len(dubl.split())
+    elif 'skeleton' in d:
+        dell = ' '.join(((re.sub(r'\s+', ' ', (d.replace('jack', ''))), '(not jack)')))
+        return len(dell.split(maxsplit=1))
+    elif 'vampire' in d:
+        dell_1 = ' '.join((''.join(((re.sub(r'\s+', ' ', (d.replace('mummy', ''))), 'vampire'))), '(not mummy)'))
+        return len(dell_1.split(maxsplit=1))
+    else:
+        return len(d.split())
 
-    for i in M:
-        if len(spell) >= len(i):
-            k = [] 
-            a = []
-            for d in i:
-                for s in spell:
-                    if d == s:
-                        a.append(s)
-            h = ''.join(a)
-            print(h)
-        
-        
-        
-            # if h == i:
-            #    k.append(h) 
-            #    print(k)
-        # elif len(spell) < len(i):
-        #    for d in i:
-        #         for s in spell:
-        #             if d == s:
-        #                 a.append(s)
-        
-    #print(a)  
-    
-    
-    
+   
 
 
 
