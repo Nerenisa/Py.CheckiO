@@ -10,19 +10,19 @@ MONSTERS = ['skeleton', 'ghost', 'jack', 'vampire', 'witch', 'mummy', 'zombie', 
 
 
 def halloween_monsters(spell: str)-> int:
-   s1 = []
-   s2 = []
+   newmonstr = []
+   notmonstr = []
    for letter_2 in MONSTERS:
         Res = ''.join([x for x in letter_2 if x in spell])
         if Res != letter_2:
-           s2.append(Res) 
+           notmonstr.append(Res) 
         elif Res == letter_2:
-           s1.append(Res) 
+           newmonstr.append(Res) 
                  
-   k = ' '.join(''.join(s2))  
-   d = ' '.join((s1))
+   k = ' '.join(''.join(notmonstr))  # ?
+   d = ' '.join((newmonstr))
    try:
-      if s2 not in MONSTERS:
+      if notmonstr not in MONSTERS:
          return 0
    finally:
       if 'ghost' in d:
@@ -39,12 +39,15 @@ def halloween_monsters(spell: str)-> int:
 
 
 if __name__ == '__main__':
-   assert halloween_monsters('casjokthg') == 2, 'jack ghost'
-   assert halloween_monsters('leumooeeyzwwmmirbmf') == 3, 'mummy zombie werewolf'
-   assert halloween_monsters('nafrweiicttwneshhtikcn') == 3, 'witch witch frankenstein'
-   assert halloween_monsters('kenoistcepajmlvre') == 2, 'skeleton vampire (not jack)'
-   assert halloween_monsters('miaimavrurymepepv') == 2, 'vampire vampire (not mummy)'
-   print("Your spell seem to be okay. It's time to check.")
+  #  assert halloween_monsters('casjokthg') == 2, 'jack ghost'
+  #  assert halloween_monsters('leumooeeyzwwmmirbmf') == 3, 'mummy zombie werewolf'
+  #  assert halloween_monsters('nafrweiicttwneshhtikcn') == 3, 'witch witch frankenstein'
+  #  assert halloween_monsters('kenoistcepajmlvre') == 2, 'skeleton vampire (not jack)'
+  #  assert halloween_monsters('miaimavrurymepepv') == 2, 'vampire vampire (not mummy)'
+  assert halloween_monsters("ctiqzyfnlsjlpbxkxrgqosokkimthutcyekbrjadzogwufzxbwqeuvhsnhv") == 5, 'jack gohst gohst zombie witch'
+  assert halloween_monsters("qldwfrzqrzmqojxsdecnfn"), == 0, 'qldwfrzqrzmqojxsdecnfn'
+  assert halloween_monsters("klojpaeeeusdopxwpbnlurfqlsbhrkjxecyihgtnyqjcqabwtrmmcdmfadnzkctavgxsrmvq") == 7, 'jack jack jack gohst vampire mummy werewolf'
+  print("Your spell seem to be okay. It's time to check.")
 
 
 
