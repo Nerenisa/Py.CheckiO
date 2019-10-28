@@ -4,7 +4,7 @@
 
 
 def first_word(text: str) -> str:
-    
+    return text.partition(' ')[0]
     
 
 
