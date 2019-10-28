@@ -19,7 +19,7 @@ def halloween_monsters(spell: str)-> int:
         elif Res == letter_2:
            newmonstr.append(Res) 
                  
-   k = ' '.join(''.join(notmonstr))  # ?
+   #k = ' '.join(''.join(notmonstr))  # ?
    d = ' '.join((newmonstr))
    try:
       if notmonstr not in MONSTERS:
@@ -44,9 +44,9 @@ if __name__ == '__main__':
   #  assert halloween_monsters('nafrweiicttwneshhtikcn') == 3, 'witch witch frankenstein'
   #  assert halloween_monsters('kenoistcepajmlvre') == 2, 'skeleton vampire (not jack)'
   #  assert halloween_monsters('miaimavrurymepepv') == 2, 'vampire vampire (not mummy)'
-  assert halloween_monsters("ctiqzyfnlsjlpbxkxrgqosokkimthutcyekbrjadzogwufzxbwqeuvhsnhv") == 5, 'jack gohst gohst zombie witch'
-  assert halloween_monsters("qldwfrzqrzmqojxsdecnfn"), == 0, 'qldwfrzqrzmqojxsdecnfn'
-  assert halloween_monsters("klojpaeeeusdopxwpbnlurfqlsbhrkjxecyihgtnyqjcqabwtrmmcdmfadnzkctavgxsrmvq") == 7, 'jack jack jack gohst vampire mummy werewolf'
+  assert halloween_monsters('ctiqzyfnlsjlpbxkxrgqosokkimthutcyekbrjadzogwufzxbwqeuvhsnhv') == 5, 'jack gohst gohst zombie witch'
+  assert halloween_monsters('qldwfrzqrzmqojxsdecnfn') == 0, 'qldwfrzqrzmqojxsdecnfn'
+  assert halloween_monsters('klojpaeeeusdopxwpbnlurfqlsbhrkjxecyihgtnyqjcqabwtrmmcdmfadnzkctavgxsrmvq') == 7, 'jack jack jack gohst vampire mummy werewolf'
   print("Your spell seem to be okay. It's time to check.")
 
 
