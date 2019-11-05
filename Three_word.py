@@ -4,8 +4,9 @@ import re
 
 
 def checkio(words: str) -> bool:
-    return all(x for x in words if re.search('\w*', words))
-
+    return bool(re.search(r'\s+'.join([r'[^\d\s]+']*3), words))
+    
+    
 #These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
     print('Example:')
